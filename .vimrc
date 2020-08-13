@@ -81,9 +81,8 @@ Plug 'joshdick/onedark.vim'
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'davidhalter/jedi-vim'
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }
-Plug 'carlitux/deoplete-ternjs'
 Plug 'vim-latex/vim-latex'
+Plug 'steelsojka/deoplete-flow'
 "*****************************************************************************
 "" Custom bundles
 "*****************************************************************************
@@ -376,9 +375,11 @@ let g:UltiSnipsEditSplit="vertical"
 " ale
 let g:ale_linters = {
             \ 'cs':['omniSharp'],
-            \ 'python':['flake8']
+            \ 'python':['flake8'],
             \}
-
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['eslint']
+let g:ale_fix_on_save = 1
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
