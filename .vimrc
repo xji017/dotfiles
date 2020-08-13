@@ -82,7 +82,6 @@ Plug 'OmniSharp/omnisharp-vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'davidhalter/jedi-vim'
 Plug 'vim-latex/vim-latex'
-Plug 'steelsojka/deoplete-flow'
 "*****************************************************************************
 "" Custom bundles
 "*****************************************************************************
