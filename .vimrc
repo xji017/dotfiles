@@ -615,3 +615,6 @@ let g:tern#arguments = [" — persistent"]
 "Latex Config
 let g:Tex_CompileRule_dvi='latex -shell-escape $*'
 let g:Tex_CompileRule_pdf='pdflatex -synctex=1 -interaction=nonstopmode -file-line-error-style -shell-escape $*'
+
+command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
+
