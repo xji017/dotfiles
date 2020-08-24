@@ -45,6 +45,8 @@ Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'autozimu/deoplete-omnisharp'
+Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'tpope/vim-surround'
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -82,6 +84,8 @@ Plug 'OmniSharp/omnisharp-vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'davidhalter/jedi-vim'
 Plug 'vim-latex/vim-latex'
+Plug 'vim-python/python-syntax'
+Plug 'mattn/emmet-vim'
 "*****************************************************************************
 "" Custom bundles
 "*****************************************************************************
@@ -161,7 +165,7 @@ set guioptions=egmrti
 
 if has("gui_running")
   if has("gui_mac") || has("gui_macvim")
-    set guifont=FiraCodeNerdFontComplete-Retina:h20
+    set guifont=IosevkaNerdFontCompleteM-Medium:h20
   endif
 else
   let g:CSApprox_loaded = 1
@@ -378,6 +382,7 @@ let g:ale_linters = {
             \}
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['eslint']
+let g:ale_fixers['python'] = ['yapf']
 let g:ale_fix_on_save = 1
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
@@ -617,4 +622,4 @@ let g:Tex_CompileRule_dvi='latex -shell-escape $*'
 let g:Tex_CompileRule_pdf='pdflatex -synctex=1 -interaction=nonstopmode -file-line-error-style -shell-escape $*'
 
 command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
-
+let g:python_highlight_all = 1
